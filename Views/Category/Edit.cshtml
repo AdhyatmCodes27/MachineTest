@@ -1,0 +1,16 @@
+﻿@model ProductApplication.Models.Category
+
+<h2>Edit Category</h2>
+
+<form method="post" action="@Url.Action("Edit")">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.CategoryId)
+
+    <div class="form-group">
+        <label>Category Name</label>
+        <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>
